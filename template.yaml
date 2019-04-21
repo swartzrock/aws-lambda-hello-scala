@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Transform: AWS::Serverless-2016-10-31
+
+Description: >-
+  A SAM CLI template for a single-endpoint Hello World Lambda function in Scala
+
+Resources:
+  HelloScalaFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: HelloScala
+      Description: A simple AWS Lambda function in Scala
+      Runtime: java8
+      Handler: lambda.ApiGatewayProxyHandler
+      CodeUri: target/scala-2.12/hello-scala.jar
+      Timeout: 15
+      Environment:
+        Variables:
+          env: staging
+      Events:
+        Hello:
+          Type: Api
+          Properties:
+            Path: /hello/{name}
+            Method: GET
+        
+Outputs:
+    ApiURL:
+      Description: "API endpoint URL for Prod environment"
+      Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/hello/{name}"
