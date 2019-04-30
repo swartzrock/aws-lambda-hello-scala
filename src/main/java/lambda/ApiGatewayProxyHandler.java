@@ -16,7 +16,8 @@ public class ApiGatewayProxyHandler implements RequestHandler<APIGatewayProxyReq
      * @param context info about this lambda function & invocation
      * @return an HTTP response
      */
-    public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent requestEvent, Context context) {
+    public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent 
+        requestEvent, Context context) {
 
         ApiHandler.Response response = ApiHandler.handle(requestEvent, context);
         
