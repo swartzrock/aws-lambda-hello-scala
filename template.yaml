@@ -14,6 +14,7 @@ Resources:
       Runtime: java8
       Handler: lambda.ApiGatewayProxyHandler
       CodeUri: target/scala-2.12/hello-scala.jar
+      MemorySize: 512
       Timeout: 15
       Environment:
         Variables:
