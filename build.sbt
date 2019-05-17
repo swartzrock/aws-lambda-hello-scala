@@ -1,5 +1,5 @@
 
-name := "hello-scala"
+name := "aws-lambda-hello-scala"
 scalaVersion := "2.12.8"
 assemblyJarName in assembly := "hello-scala.jar"
 
