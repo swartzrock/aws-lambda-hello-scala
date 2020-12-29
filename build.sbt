@@ -1,6 +1,6 @@
 
 name := "aws-lambda-hello-scala"
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.4"
 assemblyJarName in assembly := "hello-scala.jar"
 
 libraryDependencies ++= Seq(
